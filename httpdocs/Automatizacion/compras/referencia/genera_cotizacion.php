@@ -43,8 +43,7 @@ foreach ($orderInfo as $item) {
         $nsql .= "INNER JOIN prstshp_stock_available sa ON sa.id_product = pod.product_id AND  sa.id_product_attribute = pod.product_attribute_id ";
         $nsql .= "WHERE pod.id_order = {$id_order} AND pod.product_reference like '%-%' AND pcp.sitio = '{$nsitio}' ";
         $nsql .= "ORDER BY sitio DESC";
-        $productos = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($nsql);
-
+        $productos       = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($nsql);
         $lineascompras   = array();
         $cuentaProductos = 0;
         $seguro          = 0;
@@ -52,8 +51,10 @@ foreach ($orderInfo as $item) {
             $referenciaP = $producto[referenciaP];
             $pos         = strpos($referenciaP, "-R");
             $cantidad    = $producto[cantidad];
-            $precio      = $producto[precio] * .98;
-            $seguro += ($precio * .98);
+            //$precio      = $producto[precio] * .98;
+            //$seguro += ($precio * .98);
+            $precio = ($producto[precio] / .98);
+            $seguro += ($precio);
             if ($pos !== false) {
                 $referenciaP = str_replace("-R", "", $referenciaP);
                 $sql_multi   = "SELECT * FROM prstshp_stock_available WHERE reference ='$referenciaP'";
@@ -72,7 +73,8 @@ foreach ($orderInfo as $item) {
             );
             $cuentaProductos++;
         }
-        $seguro = $seguro * .01;
+
+        $seguro = $seguro * $cantidad * .01;
         if ($seguro < 10) {
             $seguro = 10;
         }

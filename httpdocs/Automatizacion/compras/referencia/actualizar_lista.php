@@ -20,7 +20,7 @@ foreach ($orderInformation as $item) {
     if ($item[id_reference] == 2) {
         $carrier = "E-DOM";
     } else if ($item[id_reference] == 3) {
-        $carrier = "E-PAS";
+        $carrier = "E-PAQ";
     }
     $pay           = "PUE";
     $payment       = "03";

@@ -73,8 +73,8 @@ $(document).ready(function() {
                 slideBy : 3
             },
             1600:{
-                items:4,
-                slideBy : 4
+                items:6,
+                slideBy : 6
             }
         },
         margin: 20, 
@@ -99,18 +99,18 @@ $(document).ready(function() {
     function get_grid() {
 	        $('#list').removeClass('active');
 	        $('#grid').addClass('active');
-            $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-list col-xs-12').addClass('prod-box-grid col-xs-12 col-sm-6 col-lg-4');
+            $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-list col-xs-12').addClass('prod-box-grid col-lg-2 col-md-4 col-sm-6');
     } // end "get_grid" function
     function get_list() {
 	        $('#grid').removeClass('active');
 	        $('#list').addClass('active');
-            $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-grid col-xs-12 col-sm-6 col-lg-4').addClass('prod-box-list col-xs-12');
+            $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-grid col-lg-2 col-md-4 col-sm-6').addClass('prod-box-list col-xs-12');
     } // end "get_list" function
     if($.cookie('view') == 'list') { 
 	        // we dont use the "get_list" function here to avoid the animation
 	        $('#grid').removeClass('active');
 	        $('#list').addClass('active');
-	        $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-grid col-xs-12 col-sm-6 col-lg-4').addClass('prod-box-list col-xs-12');
+	        $('.products.row article.product-miniature').not('#index .products.row article.product-miniature').removeClass('prod-box-grid col-lg-2 col-md-4 col-sm-6').addClass('prod-box-list col-xs-12');
     } 
 
  	if($.cookie('view') == 'grid') { 

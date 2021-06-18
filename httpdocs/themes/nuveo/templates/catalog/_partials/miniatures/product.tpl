@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='product_miniature_item'}
-  <article class="product-miniature js-product-miniature prod-box-grid col-xs-12 col-sm-6 col-lg-4" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
+  <article class="product-miniature js-product-miniature prod-box-grid col-sm-6 col-lg-2 col-xs-12" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
   
      <div class="left-block">

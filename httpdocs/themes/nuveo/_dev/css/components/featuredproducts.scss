@@ -344,9 +344,7 @@
 
 
 @media (min-width: 430px) and (max-width: 576px) {
-  #products .product-miniature, #index .products.row .product-miniature.prod-box-grid {
-  width: 50%;
-  }
+  
   .product-miniature .product-actions #add-to-cart-or-refresh button {font-size: 13px;}
   .products .product-actions .add-to-cart .material-icons { display: none;}
 }
@@ -354,7 +352,7 @@
  
 
 @media (min-width: 1600px) {
-  #index .products.row .product-miniature {width: 25%;}
+  
 }
 
 

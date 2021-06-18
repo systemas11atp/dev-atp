@@ -34,10 +34,19 @@
 <div class="container">
 <div class="row">
 <div class="hidden-lg-down">
-<div class="col-md-4 col-xs-12">
+<div class="col-md-4 col-xs-12 col-lg-2">
 {hook h='displayNav1'}
 </div>
-<div class="col-md-8 right-nav">
+<div class="col-md-4 col-xs-12 col-lg-1">
+<a href="https://avanceytec.info/content/36-nosotros" id="contact-link">Nosotros</a>
+</div>
+<div class="col-md-4 col-xs-12 col-lg-1">
+<a href="https://avanceytec.info/content/10-nuestras-sucursales" id="contact-link">Sucursales</a>
+</div>
+<div class="col-md-4 col-xs-12 col-lg-1">
+<a href="https://avanceytec.info/contactenos" id="contact-link">Contacto</a>
+</div>
+<div class="col-md-8 col-lg-7 right-nav">
 {hook h='displayNav2'}
 </div>
 </div>

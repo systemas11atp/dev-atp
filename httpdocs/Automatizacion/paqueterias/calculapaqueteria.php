@@ -599,8 +599,9 @@ foreach ($resultSucursales as $item) {
             //capuraLogs::nuevo_log(" ----------------------------------- ");
             //capuraLogs::nuevo_log(" ----------------------------------- ");
             //capuraLogs::nuevo_log("calculapaqueteria response ::: {$response}");
-            $response     = json_decode($response);
-            $totalAmnt    = round($response->body->response->data->amount->totalAmnt * 1.1, 2);
+            $response = json_decode($response);
+            //$totalAmnt    = round($response->body->response->data->amount->totalAmnt * 1.1, 2);
+            $totalAmnt    = $response->body->response->data->amount->totalAmnt;
             $subTotalAmnt = round($totalAmnt / $iva, 2);
 
             $totalSucursal += $totalAmnt;
@@ -623,6 +624,8 @@ foreach ($resultSucursales as $item) {
             $a13 = 0;
             if ($a7 == "T") {
                 $a13 = $tarima_totales;
+                $a12 += ($a13 * 350 * $iva);
+                $sumatoriaPrecios += ($a13 * 350 * $iva);
             }
             $sql_delete = "DELETE FROM prstshp_cart_carriers WHERE id_cart = {$a1} AND sitio = '{$a2}' AND categoria = '{$a7}'";
             if ($conn->query($sql_delete)) {

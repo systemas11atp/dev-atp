@@ -53,8 +53,10 @@ foreach ($orderInfo as $item) {
             $referenciaP = $producto[referenciaP];
             $pos         = strpos($referenciaP, "-R");
             $cantidad    = $producto[cantidad];
-            $precio      = $producto[precio] * .98;
-            $seguro += ($precio * .98);
+            //$precio      = $producto[precio] * .98;
+            //$seguro += ($precio * .98);
+            $precio = ($producto[precio] / .98);
+            $seguro += ($precio);
             if ($pos !== false) {
                 $referenciaP = str_replace("-R", "", $referenciaP);
                 $sql_multi   = "SELECT * FROM prstshp_stock_available WHERE reference ='$referenciaP'";

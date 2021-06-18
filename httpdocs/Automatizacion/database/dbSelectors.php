@@ -6,7 +6,7 @@ function selectBDD()
     switch ($activeStoreSelector) {
         case "avanceytec.info":
             $dbname   = "prestashop_5";
-            $username = "admin_atp";
+            $username = "prestashop_7";
             $password = "0rtHb?05";
             break;
 
